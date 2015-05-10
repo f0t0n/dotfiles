@@ -1,9 +1,7 @@
 # dotfiles
 
-Clone to home directory:  
-`cd ~ && git clone git@github.com:f0t0n/dotfiles.git`
+1. Clone to home directory: `cd ~ && git clone git@github.com:f0t0n/dotfiles.git`
 
-Run `~/dotfiles/setup`:  
-`~/dotfiles/setup`
+2. Execute setup bash script:`~/dotfiles/setup`
 
 You're done.
