@@ -129,11 +129,6 @@ set smartcase
 " Bind nohl (remove hilighted results of last search)
 noremap <Leader>h :nohl<CR>
 
-" TEST LINE 1
-" TEST LINE 1
-" TEST LINE 2
-" TEST LINE 1
-
 " Bind Ctrl+<movement> to move between windows (splits), instead of using
 " <C+w>+<movement>
 noremap <c-j> <c-w>j
