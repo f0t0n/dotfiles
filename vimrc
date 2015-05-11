@@ -52,6 +52,7 @@ filetype plugin indent on    " required
 
 syntax on
 colorscheme zenburn
+let g:airline_theme='ubaryd'
 let mapleader=","
 set encoding=utf-8 " Necessary to show Unicode glyphs
 set clipboard=unnamedplus
@@ -112,7 +113,6 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
-
 " Edit .vimrc
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
 " Apply changes in .vimrc
