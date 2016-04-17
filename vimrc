@@ -30,11 +30,14 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
-Plugin 'bling/vim-airline'
+" Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
+Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'klen/python-mode'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-fireplace'
+Plugin 'guns/vim-clojure-static'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
