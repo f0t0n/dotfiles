@@ -9,9 +9,14 @@
 
 ########## Variables
 
-dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
-files="vimrc gitignore"           # list of files/folders to symlink in homedir
+# dotfiles directory
+dir=~/dotfiles
+
+# old dotfiles backup directory
+olddir=~/dotfiles_old
+
+# list of files/folders to symlink in homedir
+files=("vimrc" "gitignore" "tmux.conf" "tmux")
 
 ##########
 
@@ -27,7 +32,7 @@ echo "...done"
 
 # move any existing dotfiles in homedir to dotfiles_old directory,
 # then create symlinks
-for file in $files; do
+for file in ${files[@]}; do
     echo "Moving any existing dotfiles from ~ to $olddir"
     mv ~/.$file ~/dotfiles_old/
     echo "Creating symlink to $file in home directory."
@@ -39,4 +44,6 @@ git clone git@github.com:gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 echo "Applying global list of rules for ignoring files in every Git repository."
 git config --global core.excludesfile ~/.gitignore
+
 echo "...done"
+

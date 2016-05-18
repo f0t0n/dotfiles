@@ -30,11 +30,13 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
-Plugin 'bling/vim-airline'
+" Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
-Plugin 'klen/python-mode'
+" Plugin 'klen/python-mode'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'fatih/vim-go'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'guns/vim-clojure-static'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -94,25 +96,26 @@ set t_Co=256
 " Available colors chart:
 " http://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg
 highlight ExtraWhitespace ctermbg=003
+highlight ColorColumn ctermbg=008
 
 
 " Setup symbols for airline
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
+" if !exists('g:airline_symbols')
+"     let g:airline_symbols = {}
+" endif
+" let g:airline_symbols.space = "\ua0"
+" let g:airline_left_sep = '»'
+" let g:airline_left_sep = '▶'
+" let g:airline_right_sep = '«'
+" let g:airline_right_sep = '◀'
+" let g:airline_symbols.linenr = '␊'
+" let g:airline_symbols.linenr = '␤'
+" let g:airline_symbols.linenr = '¶'
+" let g:airline_symbols.branch = '⎇'
+" let g:airline_symbols.paste = 'ρ'
+" let g:airline_symbols.paste = 'Þ'
+" let g:airline_symbols.paste = '∥'
+" let g:airline_symbols.whitespace = 'Ξ'
 " Edit .vimrc
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
 " Apply changes in .vimrc
@@ -165,4 +168,4 @@ let g:ctrlp_max_height = 30
 " Enable automatic virtualenv detection         *'g:pymode_virtualenv'*
 let g:pymode_virtualenv = 1
 let g:pymode_folding = 1
-
+let g:pymode_python = 'python3'
