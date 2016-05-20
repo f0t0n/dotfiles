@@ -32,8 +32,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 " Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'fatih/vim-go'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'kien/rainbow_parentheses.vim'
 " Plugin 'klen/python-mode'
@@ -58,7 +56,11 @@ filetype plugin indent on    " required
 
 syntax on
 colorscheme zenburn
-let g:airline_theme='ubaryd'
+
+" Settings for ctrlp
+" ===================
+let g:ctrlp_max_height = 30
+
 let mapleader=","
 set encoding=utf-8 " Necessary to show Unicode glyphs
 set clipboard=unnamedplus
@@ -93,33 +95,31 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Searching
+set hlsearch
+set ignorecase
+set incsearch
+set smartcase
+
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
 
+" make Esc happen without waiting for timeoutlen
+" fixes Powerline delay
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
 " Highlight trailing whitespaces
 " Available colors chart:
 " http://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg
 highlight ExtraWhitespace ctermbg=003
 highlight ColorColumn ctermbg=008
 
-
-" Setup symbols for airline
-" if !exists('g:airline_symbols')
-"     let g:airline_symbols = {}
-" endif
-" let g:airline_symbols.space = "\ua0"
-" let g:airline_left_sep = '»'
-" let g:airline_left_sep = '▶'
-" let g:airline_right_sep = '«'
-" let g:airline_right_sep = '◀'
-" let g:airline_symbols.linenr = '␊'
-" let g:airline_symbols.linenr = '␤'
-" let g:airline_symbols.linenr = '¶'
-" let g:airline_symbols.branch = '⎇'
-" let g:airline_symbols.paste = 'ρ'
-" let g:airline_symbols.paste = 'Þ'
-" let g:airline_symbols.paste = '∥'
-" let g:airline_symbols.whitespace = 'Ξ'
 " Edit .vimrc
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
 " Apply changes in .vimrc
@@ -145,11 +145,6 @@ noremap <Leader>, <Esc>:tabnext<CR>     " Navigate to the next tab
 noremap <Leader>. <Esc>:tabprevious<CR> " Navigate to the previous tab
 vnoremap <Leader>s :sort<CR>            " Sort selected lines (e.g. imports)
 
-" Searching
-set hlsearch
-set ignorecase
-set incsearch
-set smartcase
 
 " Bind nohl (remove hilighted results of last search)
 noremap <Leader>h :nohl<CR>
@@ -161,15 +156,3 @@ noremap <c-k> <c-w>k
 noremap <c-l> <c-w>l
 noremap <c-h> <c-w>h
 
-
-" Settings for ctrlp
-" ===================
-let g:ctrlp_max_height = 30
-
-" Settings for pymode
-" ===================
-
-" Enable automatic virtualenv detection         *'g:pymode_virtualenv'*
-let g:pymode_virtualenv = 1
-let g:pymode_folding = 1
-let g:pymode_python = 'python3'
