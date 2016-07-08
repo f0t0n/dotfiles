@@ -2,13 +2,11 @@
 new -s Dev
 selectw -t 0 # select the first (0) window
 selectp -t 0 # select the first (0) pane
-splitw -h -p 40 # split it into two parts 60/40
-selectp -t 1 # select the right pane
-splitw -v -p 50 # split it into two halves
-selectp -t 1 # select top right pane
-splitw -v -p 50 # split top right pane into wto halves
-selectp -t 3 # select bottom right pane
-splitw -v -p 50 # split bottom right pane into two halves
+splitw -v -p 10 # split it into two parts 90/10 (top and bottom)
+selectp -t 0 # select the top pane
+splitw -h -p 40 # split it into two parts 60/40 (left and right)
+selectp -t 1 # select the top-right pane
+splitw -v -p 50 # split it into two halves vertically 50/50 (top and bottom)
 selectw -t 0
 selectp -t 0 # go back to the first pane
 

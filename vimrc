@@ -117,6 +117,7 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
+
 " Highlight trailing whitespaces
 " Available colors chart:
 " http://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg
