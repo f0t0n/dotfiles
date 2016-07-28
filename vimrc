@@ -61,6 +61,16 @@ colorscheme zenburn
 " ===================
 let g:ctrlp_max_height = 30
 
+" Setup some default ignores for ctrlp
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\}
+" In ctrlp use the nearest .git directory as the cwd
+" This makes a lot of sense if you are working on a project that is in version
+" control. It also supports works with .svn, .hg, .bzr.
+let g:ctrlp_working_path_mode = 'r'
+
 let mapleader=","
 set encoding=utf-8 " Necessary to show Unicode glyphs
 set clipboard=unnamedplus
@@ -170,13 +180,23 @@ vnoremap <Leader>d y'>p<Esc> " Duplicate selection
 vnoremap < <gv  " better indentation
 vnoremap > >gv  " better indentation
 
+
+vnoremap <Leader>s :sort<CR>            " Sort selected lines (e.g. imports)
+
 " Deal with tabs
 noremap <Leader>t :tabnew<Esc>          " Open new tab
 noremap <Leader>tc :tabclose<Esc>       " Close current tab
-noremap <Leader>, <Esc>:tabnext<CR>     " Navigate to the next tab
-noremap <Leader>. <Esc>:tabprevious<CR> " Navigate to the previous tab
-vnoremap <Leader>s :sort<CR>            " Sort selected lines (e.g. imports)
+" noremap <Leader>, <Esc>:tabnext<CR>     " Navigate to the next tab
+" noremap <Leader>. <Esc>:tabprevious<CR> " Navigate to the previous tab
 
+
+" Deal with buffers
+noremap <Leader>b :enew<Esc>          " Open new buffer
+noremap <Leader>bc :bp<Esc>           " Close current buffer
+noremap <Leader>, <Esc>:bnext<CR>     " Navigate to the next buffer
+noremap <Leader>. <Esc>:bprevious<CR> " Navigate to the previous buffer
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
 
 " Bind nohl (remove hilighted results of last search)
 noremap <Leader>h :nohl<CR>
