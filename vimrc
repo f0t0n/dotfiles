@@ -192,7 +192,7 @@ noremap <Leader>tc :tabclose<Esc>       " Close current tab
 
 " Deal with buffers
 noremap <Leader>b :enew<Esc>          " Open new buffer
-noremap <Leader>bc :bp<Esc>           " Close current buffer
+noremap <Leader>bq :bp<Esc>           " Close current buffer
 noremap <Leader>, <Esc>:bnext<CR>     " Navigate to the next buffer
 noremap <Leader>. <Esc>:bprevious<CR> " Navigate to the previous buffer
 " Show all open buffers and their status
