@@ -10,9 +10,17 @@ fi
 
 # User specific aliases and functions
 # In Fedora: sudo dnf install vim-X11
-alias vi='vimx'
-alias vim='vimx'
-export SUDO_EDITOR=/usr/bin/vimx
+exists()
+{
+    command -v "$1" >/dev/null 2>&1
+}
+if exists vimx; then
+    alias vi='vimx'
+    alias vim='vimx'
+    export SUDO_EDITOR=/usr/bin/vimx
+else
+    export SUDO_EDITOR=/usr/bin/vim
+fi
 if [ -f /usr/bin/powerline-daemon ]; then
   powerline-daemon -q
   POWERLINE_BASH_CONTINUATION=1
