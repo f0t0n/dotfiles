@@ -29,16 +29,18 @@ Plugin 'gmarik/Vundle.vim'
 " Plugin 'user/L9', {'name': 'newL9'}
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar'
+" Plugin 'majutsushi/tagbar'
 " Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
+" Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'kien/rainbow_parentheses.vim'
 " Plugin 'klen/python-mode'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'fatih/vim-go'
+" Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fireplace'
 Plugin 'guns/vim-clojure-static'
+Plugin 'davidhalter/jedi-vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -56,6 +58,10 @@ filetype plugin indent on    " required
 
 syntax on
 colorscheme zenburn
+
+
+" Jedi autocomplete
+autocmd FileType python setlocal completeopt-=preview
 
 " Settings for ctrlp
 " ===================

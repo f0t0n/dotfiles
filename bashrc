@@ -20,6 +20,9 @@ if [ -f /usr/bin/powerline-daemon ]; then
   . /usr/share/powerline/bash/powerline.sh
 fi
 
+
+# aws ecr
+alias bldbox_erc_login='eval $(aws --profile bldbox ecr get-login)'
 export PATH="/home/f0t0n/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
