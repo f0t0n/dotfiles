@@ -39,7 +39,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 " Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fireplace'
 Plugin 'guns/vim-clojure-static'
-Plugin 'davidhalter/jedi-vim'
+" Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
