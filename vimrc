@@ -39,7 +39,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 " Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fireplace'
 Plugin 'guns/vim-clojure-static'
-" Plugin 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -55,6 +55,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
 
 syntax on
 colorscheme zenburn
@@ -162,6 +163,8 @@ let g:rbpt_colorpairs = [
 
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
+
+let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound

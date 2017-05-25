@@ -30,7 +30,12 @@ fi
 
 
 # aws ecr
-alias bldbox_erc_login='eval $(aws --profile bldbox ecr get-login)'
+ecr() {
+    # Usage: ecr <company-name>
+    # Example: ecr <idevelop-city>
+    _aws_profile=${1:-default}
+    eval "$(aws --profile $_aws_profile ecr get-login --no-include-email)"
+}
 export PATH="/home/f0t0n/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
