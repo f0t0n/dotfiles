@@ -1,2 +1,4 @@
 newsbeuter/history*
 newsbeuter/cache*
+tmux/plugins
+tmux/resurrect
