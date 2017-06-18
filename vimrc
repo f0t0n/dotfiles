@@ -34,6 +34,7 @@ Plugin 'scrooloose/nerdtree'
 " In Fedora just run `sudo dnf install ctags`
 Plugin 'majutsushi/tagbar'
 
+
 " Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 " Plugin 'nsf/gocode', {'rtp': 'vim/'}
@@ -44,6 +45,11 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'tpope/vim-fireplace'
 Plugin 'guns/vim-clojure-static'
 Plugin 'davidhalter/jedi-vim'
+
+
+" Markdown
+Plugin 'tpope/vim-markdown'
+Plugin 'jtratner/vim-flavored-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
