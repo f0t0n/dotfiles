@@ -29,7 +29,11 @@ Plugin 'gmarik/Vundle.vim'
 " Plugin 'user/L9', {'name': 'newL9'}
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
-" Plugin 'majutsushi/tagbar'
+
+" Tagbar plug-in requires ctags: http://ctags.sourceforge.net/
+" In Fedora just run `sudo dnf install ctags`
+Plugin 'majutsushi/tagbar'
+
 " Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 " Plugin 'nsf/gocode', {'rtp': 'vim/'}
@@ -219,3 +223,7 @@ noremap <c-k> <c-w>k
 noremap <c-l> <c-w>l
 noremap <c-h> <c-w>h
 
+" Plugins
+
+" Tagbar
+nnoremap <F8> :TagbarToggle<CR>
