@@ -36,9 +36,25 @@ ecr() {
     _aws_profile=${1:-default}
     eval "$(aws --profile $_aws_profile ecr get-login --no-include-email)"
 }
+
+battery() {
+    file=~/.battery/$1
+    if [ -f $file ] ; then
+        sh $file $2 $3
+    else
+        echo "Example of usage:
+              battery remaining,
+              battery status,
+              battery setup <start_charge_percent> <stop_charge_percent>"
+    fi
+}
 export PATH="/home/f0t0n/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 [[ -s "/home/f0t0n/.gvm/scripts/gvm" ]] && source "/home/f0t0n/.gvm/scripts/gvm"
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

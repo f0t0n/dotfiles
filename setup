@@ -1,4 +1,4 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
 
 ###############################################################################
 # This script creates symlinks from the home directory
@@ -16,7 +16,7 @@ dir=~/dotfiles
 olddir=~/dotfiles_old
 
 # list of files/folders to symlink in homedir
-files=("bashrc" "vimrc" "gitignore" "tmux.conf" "tmux" "newsbeuter" "emacs.d")
+files=("bashrc" "vimrc" "gitignore" "tmux.conf" "tmux" "emacs.d" "battery")
 
 ##########
 
@@ -46,4 +46,3 @@ echo "Applying global list of rules for ignoring files in every Git repository."
 git config --global core.excludesfile ~/.gitignore
 
 echo "...done"
-
