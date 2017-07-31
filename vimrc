@@ -43,6 +43,7 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 " Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fireplace'
+Plugin 'vim-scripts/paredit.vim'
 Plugin 'guns/vim-clojure-static'
 Plugin 'davidhalter/jedi-vim'
 
@@ -80,8 +81,8 @@ let g:ctrlp_max_height = 30
 
 " Setup some default ignores for ctrlp
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
-  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+\ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
 \}
 " In ctrlp use the nearest .git directory as the cwd
 " This makes a lot of sense if you are working on a project that is in version
@@ -137,12 +138,12 @@ set t_Co=256
 " make Esc happen without waiting for timeoutlen
 " fixes Powerline delay
 if ! has('gui_running')
-    set ttimeoutlen=10
-    augroup FastEscape
-        autocmd!
-        au InsertEnter * set timeoutlen=0
-        au InsertLeave * set timeoutlen=1000
-    augroup END
+set ttimeoutlen=10
+augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+augroup END
 endif
 
 " Highlight trailing whitespaces
@@ -153,24 +154,23 @@ highlight ColorColumn ctermbg=008
 
 " Settings for Rainbow Parentheses
 let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
-
+\ ['brown',       'RoyalBlue3'],
+\ ['Darkblue',    'SeaGreen3'],
+\ ['darkgray',    'DarkOrchid3'],
+\ ['darkgreen',   'firebrick3'],
+\ ['darkcyan',    'RoyalBlue3'],
+\ ['darkred',     'SeaGreen3'],
+\ ['darkmagenta', 'DarkOrchid3'],
+\ ['brown',       'firebrick3'],
+\ ['gray',        'RoyalBlue3'],
+\ ['black',       'SeaGreen3'],
+\ ['darkmagenta', 'DarkOrchid3'],
+\ ['Darkblue',    'firebrick3'],
+\ ['darkgreen',   'RoyalBlue3'],
+\ ['darkcyan',    'SeaGreen3'],
+\ ['darkred',     'DarkOrchid3'],
+\ ['red',         'firebrick3'],
+\ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
 
@@ -178,8 +178,8 @@ let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
-" au Syntax * RainbowParenthesesLoadSquare
-" au Syntax * RainbowParenthesesLoadBraces
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 " Edit .vimrc
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
