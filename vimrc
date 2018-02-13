@@ -81,13 +81,14 @@ let g:ctrlp_max_height = 30
 
 " Setup some default ignores for ctrlp
 let g:ctrlp_custom_ignore = {
-\ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+\ 'dir':  '\v[\/](\.(git|hg|svn|eggs|cache)|\_site|htmlcov)$',
 \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
 \}
 " In ctrlp use the nearest .git directory as the cwd
 " This makes a lot of sense if you are working on a project that is in version
 " control. It also supports works with .svn, .hg, .bzr.
 let g:ctrlp_working_path_mode = 'r'
+
 
 let mapleader=","
 set encoding=utf-8 " Necessary to show Unicode glyphs
