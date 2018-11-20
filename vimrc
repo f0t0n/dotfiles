@@ -89,6 +89,9 @@ let g:ctrlp_custom_ignore = {
 " control. It also supports works with .svn, .hg, .bzr.
 let g:ctrlp_working_path_mode = 'r'
 
+" Python settings:
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
+autocmd Filetype python setlocal foldmethod=indent
 
 let mapleader=","
 set encoding=utf-8 " Necessary to show Unicode glyphs
