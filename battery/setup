@@ -1,3 +1,4 @@
 #!/bin/sh
 
-sudo tlp setcharge ${1:-40} ${2:-80}
+sudo tlp setcharge ${1:-40} ${2:-80} BAT0
+sudo tlp setcharge ${1:-40} ${2:-80} BAT1

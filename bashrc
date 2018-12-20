@@ -29,6 +29,10 @@ if [ -f /usr/bin/powerline-daemon ]; then
 fi
 
 
+# tmux ressurect history - don't write history -r into the pane
+HISTCONTROL=ignoreboth
+
+
 # aws ecr
 ecr() {
     # Usage: ecr <company-name>
