@@ -1,8 +1,0 @@
-pane	0	0	:bash	1	:*	0	:/home/f0t0n/Projects/competera/src/bitbucket.org/competera	1	bash	:
-pane	Dev	0	:bash	1	:*	0	:/home/f0t0n/Projects/f0t0n/src/bitbucket.org/f0t0n	0	bash	:
-pane	Dev	0	:bash	1	:*	1	:/home/f0t0n/Projects/competera/src/bitbucket.org/competera/qdrain/coordinator	0	htop	:htop
-pane	Dev	0	:bash	1	:*	2	:/home/f0t0n/Projects/f0t0n/src/bitbucket.org/f0t0n	0	bash	:
-pane	Dev	0	:bash	1	:*	3	:/home/f0t0n/Projects/f0t0n/src/bitbucket.org/f0t0n	1	bash	:
-window	0	0	1	:*	cf3e,176x48,0,0,1
-window	Dev	0	1	:*	45a9,176x48,0,0[176x30,0,0{118x30,0,0,2,57x30,119,0[57x14,119,0,3,57x15,119,15,4]},176x17,0,31,5]
-state	Dev	0

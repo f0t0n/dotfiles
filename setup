@@ -17,7 +17,8 @@ olddir=~/dotfiles_old
 
 # list of files/folders to symlink in homedir
 files=(".bashrc" ".ssh/config" ".vimrc"
-       ".gitignore" ".tmux.conf" ".tmux" ".emacs.d" ".battery")
+       ".tmux.conf" ".tmux" ".emacs.d" ".battery"
+       ".gitignore" ".gitconfig" ".gitconfig-f0t0n" ".gitconfig-competera")
 
 ##########
 

@@ -1,8 +1,0 @@
-pane	0	0	:bash	1	:*	0	:/home/f0t0n/Projects/competera/src/bitbucket.org/competera	1	bash	:
-pane	Dev	0	:bash	1	:*	0	:/home/f0t0n/Projects/competera/src/bitbucket.org/competera	1	vimx	:vimx
-pane	Dev	0	:bash	1	:*	1	:/home/f0t0n/Projects/competera/src/bitbucket.org/competera/qdrain/coordinator	0	htop	:htop
-pane	Dev	0	:bash	1	:*	2	:/home/f0t0n/Projects/competera/src/bitbucket.org/competera/qdrain	0	docker-compose	:docker-compose exec mq redis-cli
-pane	Dev	0	:bash	1	:*	3	:/home/f0t0n	0	bash	:
-window	0	0	1	:*	cf3e,176x48,0,0,1
-window	Dev	0	1	:*	95ca,176x48,0,0[176x31,0,0{118x31,0,0,2,57x31,119,0[57x15,119,0,3,57x15,119,16,4]},176x16,0,32,5]
-state	Dev	0

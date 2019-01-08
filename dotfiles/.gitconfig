@@ -1,0 +1,15 @@
+[includeIf "gitdir:~/"]
+  path = .gitconfig-f0t0n
+[includeIf "gitdir:~/competera/"]
+  path = .gitconfig-competera
+[core]
+	editor = vim
+	excludesfile = /home/f0t0n/.gitignore
+[push]
+	default = simple
+[credential]
+	helper = cache
+[commit]
+	gpgsign = true
+[gpg]
+	program = /usr/bin/gpg2
