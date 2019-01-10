@@ -3,6 +3,25 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" Jedi autocomplete
+autocmd FileType python setlocal completeopt-=preview
+
+" Settings for ctrlp
+" ===================
+let g:ctrlp_max_height = 30
+
+" Setup some default ignores for ctrlp
+let g:ctrlp_custom_ignore = {
+\ 'dir':  '\v[\/](\.(git|hg|svn|eggs|cache)|\_site|htmlcov)$',
+\ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\}
+" In ctrlp use the nearest .git directory as the cwd
+" This makes a lot of sense if you are working on a project that is in version
+" control. It also supports works with .svn, .hg, .bzr.
+let g:ctrlp_working_path_mode = 'r'
+
+" Python settings:
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -10,7 +29,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -52,8 +71,15 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'jtratner/vim-flavored-markdown'
 
+" Grep files
+" Prerequisites:
+" sudo dnf install ripgrep
+" See: https://github.com/BurntSushi/ripgrep#installation
+Plugin 'jremmen/vim-ripgrep'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -232,6 +258,11 @@ noremap <c-j> <c-w>j
 noremap <c-k> <c-w>k
 noremap <c-l> <c-w>l
 noremap <c-h> <c-w>h
+
+" Ripgrep hot key
+nnoremap <F4> :Rg<Space>
+let g:rg_highlight = 'true'
+
 
 " Plugins
 
