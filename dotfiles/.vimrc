@@ -3,8 +3,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" Jedi autocomplete
-autocmd FileType python setlocal completeopt-=preview
 
 " Settings for ctrlp
 " ===================
@@ -96,7 +94,6 @@ filetype plugin indent on    " required
 
 syntax on
 colorscheme zenburn
-
 
 " Jedi autocomplete
 autocmd FileType python setlocal completeopt-=preview
