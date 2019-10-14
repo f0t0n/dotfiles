@@ -146,22 +146,23 @@ set wildignore+=*.pyc
 
 " Disable stupid backup and swap files - they trigger too many events
 " for file system watchers
-set nobackup
-set nowritebackup
-set noswapfile
+" set nobackup
+" set nowritebackup
+" set noswapfile
 
 " Searching
 set hlsearch
 set ignorecase
 set incsearch
 set smartcase
+set shortmess-=S    " show N/M while searching
 
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
 
 " Show white spaces
-:set listchars=eol:¬
-:set list
+set listchars=eol:¬
+set list
 " make Esc happen without waiting for timeoutlen
 " fixes Powerline delay
 if ! has('gui_running')
