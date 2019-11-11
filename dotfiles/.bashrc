@@ -56,6 +56,10 @@ export PATH="/home/f0t0n/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# Google Cloud
+
+export CLOUDSDK_PYTHON=python3
+
 [[ -s "/home/f0t0n/.gvm/scripts/gvm" ]] && source "/home/f0t0n/.gvm/scripts/gvm"
 
 
