@@ -113,8 +113,11 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_working_path_mode = 'r'
 
 " Python settings:
-autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype python setlocal foldmethod=indent
+
+" YAML files:
+autocmd FileType yaml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 let mapleader=","
 set encoding=utf-8 " Necessary to show Unicode glyphs
