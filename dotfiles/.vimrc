@@ -69,6 +69,13 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'jtratner/vim-flavored-markdown'
 
+" Markdown preview
+" pip install grip
+Plugin 'JamshedVesuna/vim-markdown-preview'
+
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_temp_file=1
+
 " Grep files
 " Prerequisites:
 " sudo dnf install ripgrep
@@ -165,6 +172,7 @@ set t_Co=256
 
 " Show white spaces
 set listchars=eol:¬
+set listchars=tab:┊\ 
 set list
 " make Esc happen without waiting for timeoutlen
 " fixes Powerline delay
