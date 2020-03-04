@@ -1,0 +1,13 @@
+[Unit]
+Description=Sync Clouds Service (Dropbox -> Google Drive)
+After=network.target
+StartLimitIntervalSec=3
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=f0t0n
+ExecStart=watch -n 10 rclone sync dropbox:password google_drive_personal:Dropbox/password 2>/dev/null &
+
+[Install]
+WantedBy=multi-user.target
