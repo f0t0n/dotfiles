@@ -18,8 +18,12 @@ if exists vimx; then
     alias vi='vimx'
     alias vim='vimx'
     export SUDO_EDITOR=/usr/bin/vimx
+    export EDITOR=/usr/bin/vimx
+    export VISUAL=vimx
 else
     export SUDO_EDITOR=/usr/bin/vim
+    export EDITOR=/usr/bin/vim
+    export VISUAL=vim
 fi
 if [ -f /usr/bin/powerline-daemon ]; then
   powerline-daemon -q
