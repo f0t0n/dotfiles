@@ -1,10 +1,12 @@
 [includeIf "gitdir:~/"]
   path = .gitconfig-f0t0n
-[includeIf "gitdir:~/competera/"]
+[includeIf "gitdir:~/code/competera/"]
   path = .gitconfig-competera
 [core]
 	editor = vim
-	excludesfile = /home/f0t0n/.gitignore
+	excludesfile = ~/.gitignore
+[pager]
+    branch = false
 [push]
 	default = simple
 [credential]
@@ -12,4 +14,5 @@
 [commit]
 	gpgsign = true
 [gpg]
-	program = /usr/bin/gpg2
+#	program = /usr/bin/gpg2
+    program = /opt/homebrew/bin/gpg

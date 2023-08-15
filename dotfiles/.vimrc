@@ -49,10 +49,13 @@ Plugin 'scrooloose/nerdtree'
 
 " Tagbar plug-in requires ctags: http://ctags.sourceforge.net/
 " In Fedora just run `sudo dnf install ctags`
-Plugin 'majutsushi/tagbar'
+Plugin 'preservim/tagbar'
 
 
-" Plugin 'bling/vim-airline'
+" Airline - status bar for Vim:
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
 Plugin 'kien/ctrlp.vim'
 " Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'kien/rainbow_parentheses.vim'
@@ -61,7 +64,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 " Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fireplace'
 Plugin 'vim-scripts/paredit.vim'
-Plugin 'guns/vim-clojure-static'
+"Plugin 'guns/vim-clojure-static'
 Plugin 'davidhalter/jedi-vim'
 
 
@@ -105,6 +108,12 @@ colorscheme zenburn
 " Jedi autocomplete
 autocmd FileType python setlocal completeopt-=preview
 
+
+"Settings for Vim Airline
+" ================
+let g:airline_theme='zenburn'
+let g:airline_powerline_fonts = 1
+
 " Settings for ctrlp
 " ===================
 let g:ctrlp_max_height = 30
@@ -128,7 +137,12 @@ autocmd FileType yaml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 let mapleader=","
 set encoding=utf-8 " Necessary to show Unicode glyphs
-set clipboard=unnamedplus
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed "OSX
+else
+  set clipboard=unnamedplus "Linux
+endif
+set re=0
 set smartindent
 set tabstop=4
 set softtabstop=4
@@ -156,9 +170,9 @@ set wildignore+=*.pyc
 
 " Disable stupid backup and swap files - they trigger too many events
 " for file system watchers
-" set nobackup
-" set nowritebackup
-" set noswapfile
+set nobackup
+set nowritebackup
+set noswapfile
 
 " Searching
 set hlsearch

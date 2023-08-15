@@ -1,2 +1,3 @@
 dotfiles/.tmux/plugins
 dotfiles/.tmux/resurrect
+dotfiles/.emacs.d/elpa
