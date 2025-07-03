@@ -20,55 +20,61 @@ let g:ctrlp_working_path_mode = 'r'
 
 " Python settings:
 
-" Install Plugins
-call plug#begin('~/.vim/plugged')
-" Keep Plug commands between plug#begin/end.
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
 " The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-" Plug 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
-" Plug 'L9'
+" Plugin 'L9'
 " Git plugin not hosted on GitHub
-" Plug 'git://git.wincent.com/command-t.git'
+" Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
-" Plug 'file:///home/gmarik/path/to/plugin'
+" Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-" Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
-" Plug 'user/L9', {'name': 'newL9'}
-Plug 'flazz/vim-colorschemes'
-Plug 'scrooloose/nerdtree'
+" Plugin 'user/L9', {'name': 'newL9'}
+Plugin 'flazz/vim-colorschemes'
+Plugin 'scrooloose/nerdtree'
 
 " Tagbar plug-in requires ctags: http://ctags.sourceforge.net/
 " In Fedora just run `sudo dnf install ctags`
-Plug 'preservim/tagbar'
+Plugin 'preservim/tagbar'
 
 
 " Airline - status bar for Vim:
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
-Plug 'kien/ctrlp.vim'
-" Plug 'nsf/gocode', {'rtp': 'vim/'}
-Plug 'kien/rainbow_parentheses.vim'
-" Plug 'klen/python-mode'
-Plug 'ntpeters/vim-better-whitespace'
-" Plug 'fatih/vim-go'
-Plug 'tpope/vim-fireplace'
-Plug 'vim-scripts/paredit.vim'
-"Plug 'guns/vim-clojure-static'
-Plug 'davidhalter/jedi-vim'
+Plugin 'kien/ctrlp.vim'
+" Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'kien/rainbow_parentheses.vim'
+" Plugin 'klen/python-mode'
+Plugin 'ntpeters/vim-better-whitespace'
+" Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-fireplace'
+Plugin 'vim-scripts/paredit.vim'
+"Plugin 'guns/vim-clojure-static'
+Plugin 'davidhalter/jedi-vim'
 
 
 " Markdown
-Plug 'tpope/vim-markdown'
-Plug 'jtratner/vim-flavored-markdown'
+Plugin 'tpope/vim-markdown'
+Plugin 'jtratner/vim-flavored-markdown'
 
 " Markdown preview
 " pip install grip
-Plug 'JamshedVesuna/vim-markdown-preview'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 
 let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_temp_file=1
@@ -77,10 +83,10 @@ let vim_markdown_preview_temp_file=1
 " Prerequisites:
 " sudo dnf install ripgrep
 " See: https://github.com/BurntSushi/ripgrep#installation
-Plug 'jremmen/vim-ripgrep'
+Plugin 'jremmen/vim-ripgrep'
 
 " All of your Plugins must be added before the following line
-call plug#end()            " required
+call vundle#end()            " required
 
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:

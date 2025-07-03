@@ -7,8 +7,24 @@
 ;; Turn off the menu bar at the top of each frame because it's distracting
 (menu-bar-mode -1)
 
+
 ;; Show line numbers
-(global-linum-mode)
+;;(global-linum-mode t)
+
+
+;; Show line numbers
+;; https://stackoverflow.com/questions/76901942/getting-an-error-when-starting-up-emacs-related-to-global-linum-mode
+(global-display-line-numbers-mode 1) ;; Enable line numbers globally
+
+;; 80 characters ruler:
+(setopt global-display-fill-column-indicator-mode 80)
+
+;; Enable Key casting:
+
+(keycast-mode-line-mode) ;; shows the current binding at the bottom of the selected window, in its mode line.
+;; (keycast-header-line-mode) ;; shows the current binding at the top of the selected window, in its header line.
+;; (keycast-tab-bar-mode shows) ;; the current binding at the top of the selected frame, in its tab bar.
+;; (keycast-log-mode) ;; displays a list of recent bindings in a dedicated frame.
 
 ;; You can uncomment this to remove the graphical toolbar at the top. After
 ;; awhile, you won't need the toolbar.
