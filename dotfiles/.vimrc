@@ -148,6 +148,7 @@ set colorcolumn=80
 set formatoptions-=t
 set cursorline
 set number
+set relativenumber
 set ruler
 set wildmenu
 set showcmd
