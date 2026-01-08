@@ -1,3 +1,5 @@
 dotfiles/.tmux/plugins
 dotfiles/.tmux/resurrect
 dotfiles/.emacs.d/elpa
+dotfiles/.emacs.d/history
+dotfiles/.emacs.d/.emacs.desktop*

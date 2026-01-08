@@ -1,3 +1,34 @@
+;; If you hate having this "messy" auto-generated code in your clean init.el,
+;; you can tell Emacs to write it to a completely separate file by adding this
+;; to the very top of your configuration.
+;; This keeps your init.el strictly for your hand-written code and moves the
+;; custom-set-variables block to a file called custom.el
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file 'noerror)
+
+;; Turn on winner-mode to undo and redu windows configuration (splits)
+;; Useful, for example to reopen accidentally closed window by hitting C-0
+;; instead of C-o
+;; Use C-c <left> for Undo
+;; Use C-c <right> for Redo
+(winner-mode 1)
+
+;; Share clipboard between apps (make able to paste into emacs what was copied
+;; into clipboard from other application
+(xclip-mode 1)
+
+;; Restore state (splits, buffers) between sessions
+(desktop-save-mode 1)
+
+;; Restore lazily: 5 buffers at the start, others - later when is idle
+(setq desktop-restore-eager 5)
+
+;; Remembers the exact line and column where your cursor was in every file:
+(save-place-mode 1)
+
+;; Preserves your minibuffer command history (like previous M-x commands):
+(savehist-mode 1)
+
 ;;;;
 ;; Packages
 ;;;;
@@ -10,9 +41,13 @@
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives
              '("gnu" . "http://elpa.gnu.org/packages/") t)
 
-
+(setq package-archive-priorities
+      '(("melpa-stable" . 10)
+        ("melpa" . 5)))
 ;; Load and activate emacs packages. Do this first so that the
 ;; packages are loaded before you start trying to modify them.
 ;; This also sets the load path.
@@ -29,6 +64,21 @@
 ;; Add in your own as you wish:
 (defvar my-packages
   '(
+    ;; Enable cross-application clipboard (requires to run `brew install xclip`)
+    xclip
+    ;; Fast terminal written in C
+    ;; vterm (The Performance Favorite)
+    ;; Most commonly used by: Software engineers working on Linux or macOS who
+    ;; need speed and 1:1 compatibility with modern terminal apps.
+    ;; Why it’s popular: It is written in C (libvterm) rather than Elisp,
+    ;; making it significantly faster than any other built-in mode. It handles
+    ;; large outputs (like massive logs) and complex "visual" programs
+    ;; (like htop, ssh, or even vim inside Emacs) without lagging.
+    ;; Best for: Compiling large projects, running interactive CLI tools,
+    ;; and daily heavy-duty development.
+    ;; Requires to install cmake, libtool, gcc (or clang)
+    vterm
+
     gnu-elpa-keyring-update
     ;; makes handling lisp expressions much, much easier
     ;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
@@ -137,17 +187,4 @@
 
 ;; Load Zenburn Theme
 (load-theme 'zenburn t)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(coffee-tab-width 2)
- '(package-selected-packages
-   '(keycast zenburn-theme tagedit smex rainbow-delimiters projectile paredit markdown-mode magit gnu-elpa-keyring-update exec-path-from-shell clojure-mode-extra-font-locking cider)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(xclip-mode 1)

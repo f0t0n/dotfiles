@@ -17,7 +17,9 @@
 (global-display-line-numbers-mode 1) ;; Enable line numbers globally
 
 ;; 80 characters ruler:
-(setopt global-display-fill-column-indicator-mode 80)
+(setopt global-display-fill-column-indicator-mode t)
+(setq-default display-fill-column-indicator-column 80)
+
 
 ;; Enable Key casting:
 
