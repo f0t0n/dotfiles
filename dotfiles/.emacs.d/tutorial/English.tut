@@ -1,4 +1,4 @@
--13411
+-1446
 50
 Emacs tutorial.  See end for copying conditions.
 
@@ -27,6 +27,7 @@ try using a command.  For instance:
 
 
 
+
 [Middle of page left blank for didactic purposes.   Text continues below]
 
 
@@ -41,7 +42,7 @@ try using a command.  For instance:
 
 >> Now type C-v (View next screen) to scroll down in the tutorial.
 	(go ahead, do it by holding down the CONTROL key while typing v).
-	From now on, please do this whenever you reach the end of the screen.
+XCXC	From now on, please do this whenever you reach the end of the screen.
 
 Note that there is an overlap of two lines when you scroll a whole
 screenful; this provides some continuity so you can continue reading
@@ -199,6 +200,7 @@ Greater-than), which moves to the end of the whole text.
 On most terminals, the "<" is above the comma, so you must use the
 shift key to type it.  On these terminals you must use the shift key
 to type M-< also; without the shift key, you would be typing M-comma.
+
 >> Try M-< now, to move to the beginning of the tutorial.
    Then use C-v repeatedly to move back here.
 
@@ -1124,7 +1126,7 @@ The manual also describes many other Emacs features.
 ---------------------
 
 There's a rich set of packages for Emacs written by the community,
-which extend Emacs' capabilities.  These packages include support for
+which extend Emacs's capabilities.  These packages include support for
 new languages, additional themes, plugins for integrating with
 external applications, and much, much more.
 
@@ -1152,7 +1154,7 @@ starting with the one written by Stuart Cracraft for the original Emacs.
 This version of the tutorial is a part of GNU Emacs.  It is copyrighted
 and comes with permission to distribute copies on certain conditions:
 
-  Copyright (C) 1985, 1996, 1998, 2001-2023 Free Software Foundation,
+  Copyright (C) 1985, 1996, 1998, 2001-2025 Free Software Foundation,
   Inc.
 
   This file is part of GNU Emacs.

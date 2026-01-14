@@ -1,4 +1,4 @@
-;; These customizations change the wayemacs looks and disable/enable
+;; These customizations change the way emacs looks and disable/enable
 ;; some user interface elements. Some useful customizations are
 ;; commented out, and begin with the line "CUSTOMIZE". These are more
 ;; a matter of preference and may require some fiddling to match your
@@ -14,12 +14,34 @@
 
 ;; Show line numbers
 ;; https://stackoverflow.com/questions/76901942/getting-an-error-when-starting-up-emacs-related-to-global-linum-mode
-(global-display-line-numbers-mode 1) ;; Enable line numbers globally
+(global-display-line-numbers-mode t) ;; Enable line numbers globally
+
+;; Enable hybrid line numbers
+(setq display-line-numbers-type 'relative)
+
+;; Highlight current line number
+(set-face-attribute 'line-number-current-line nil
+                    :inherit 'line-number      ;; Keep basic font settings
+                    :foreground "gold"         ;; Pick a bright color (e.g., "gold", "orange", or "#00ff00")
+                    :weight 'bold              ;; Make it bold
+                    :background "#333333"      ;; Give it a subtle background "block"
+                    :height 1.0)              ;; To make it 10% larger than other numbers set height to 1.1
+
+
+
 
 ;; 80 characters ruler:
 (setopt global-display-fill-column-indicator-mode t)
 (setq-default display-fill-column-indicator-column 80)
 
+;; Rainbow delimeters (rainbow-deliemeters) mode settings:
+
+;; Enable rainbow-delimiters for all programming modes
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+;; Make the first level of parentheses stand out
+(set-face-foreground 'rainbow-delimiters-depth-1-face "white")
+(set-face-bold 'rainbow-delimiters-depth-1-face t)
 
 ;; Enable Key casting:
 
@@ -30,8 +52,8 @@
 
 ;; You can uncomment this to remove the graphical toolbar at the top. After
 ;; awhile, you won't need the toolbar.
-;; (when (fboundp 'tool-bar-mode)
-;;   (tool-bar-mode -1))
+(when (fboundp 'tool-bar-mode)
+   (tool-bar-mode -1))
 
 ;; Don't show native OS scroll bars for buffers because they're redundant
 (when (fboundp 'scroll-bar-mode)
@@ -47,7 +69,7 @@
 (load-theme 'zenburn t)
 
 ;; increase font size for better readability
-(set-face-attribute 'default nil :height 120)
+(set-face-attribute 'default nil :height 140)
 
 ;; Uncomment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height
