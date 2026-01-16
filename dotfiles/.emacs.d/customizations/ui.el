@@ -25,7 +25,7 @@
                     :foreground "gold"         ;; Pick a bright color (e.g., "gold", "orange", or "#00ff00")
                     :weight 'bold              ;; Make it bold
                     :background "#333333"      ;; Give it a subtle background "block"
-                    :height 1.0)              ;; To make it 10% larger than other numbers set height to 1.1
+                    :height 1.0)              ;; To make it 10% larger than other numbers set height to 1.1x
 
 
 
@@ -40,8 +40,8 @@
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ;; Make the first level of parentheses stand out
-(set-face-foreground 'rainbow-delimiters-depth-1-face "white")
-(set-face-bold 'rainbow-delimiters-depth-1-face t)
+;;(set-face-foreground 'rainbow-delimiters-depth-1-face "white")
+;;(set-face-bold 'rainbow-delimiters-depth-1-face t)
 
 ;; Enable Key casting:
 
