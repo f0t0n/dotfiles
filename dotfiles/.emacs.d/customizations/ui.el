@@ -32,7 +32,7 @@
 
 ;; 80 characters ruler:
 (setopt global-display-fill-column-indicator-mode t)
-(setq-default display-fill-column-indicator-column 80)
+(setq-default display-fill-column-indicator-column 100)
 
 ;; Rainbow delimeters (rainbow-deliemeters) mode settings:
 
