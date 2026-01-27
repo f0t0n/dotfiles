@@ -86,7 +86,8 @@
     paredit
 
     ;; Common Lisp "IDE"
-    slime
+    ;; slime
+    sly
 
     ;; key bindings and code colorization for Clojure
     ;; https://github.com/clojure-emacs/clojure-mode
@@ -182,11 +183,8 @@
 ;; Hard-to-categorize customizations
 (load "misc.el")
 
-;; For Common Lisp programming
+;; For Lisp programming
 (load "common-lisp.el")
-
-;; For editing lisps
-(load "elisp-editing.el")
 
 ;; Langauage-specific
 (load "setup-clojure.el")
