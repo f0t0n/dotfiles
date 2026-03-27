@@ -4,7 +4,7 @@
   path = .gitconfig-competera
 [core]
 	editor = vim
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/f0t0n/.gitignore
 [pager]
     branch = false
 [push]

@@ -117,6 +117,9 @@
     ;; edit markdown
     markdown-mode
 
+    ;; TypeScript syntax highlighting
+    typescript-mode
+
     ;; git integration
     magit
 
@@ -189,6 +192,7 @@
 ;; Langauage-specific
 (load "setup-clojure.el")
 (load "setup-js.el")
+(load "setup-ts.el")
 
 ;; Load Zenburn Theme
 (load-theme 'zenburn t)
