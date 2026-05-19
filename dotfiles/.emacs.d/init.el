@@ -48,6 +48,10 @@
 (setq package-archive-priorities
       '(("melpa-stable" . 10)
         ("melpa" . 5)))
+
+(setq package-pinned-packages
+      '((markdown-preview-mode . "melpa")
+        (websocket . "melpa")))
 ;; Load and activate emacs packages. Do this first so that the
 ;; packages are loaded before you start trying to modify them.
 ;; This also sets the load path.
@@ -116,6 +120,9 @@
 
     ;; edit markdown
     markdown-mode
+
+    ;; live markdown preview in browser
+    markdown-preview-mode
 
     ;; TypeScript syntax highlighting
     typescript-mode
@@ -193,6 +200,7 @@
 (load "setup-clojure.el")
 (load "setup-js.el")
 (load "setup-ts.el")
+(load "setup-markdown.el")
 
 ;; Load Zenburn Theme
 (load-theme 'zenburn t)
