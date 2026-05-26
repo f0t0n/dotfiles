@@ -18,7 +18,7 @@ For crontab-based cloud sync, add `* * * * * $HOME/dotfiles/crontab/sync_clouds.
 
 ### Symlinked files
 
-`.bashrc`, `.ssh/config`, `.vimrc`, `.tmux.conf`, `.tmux`, `.emacs.d`, `.battery`, `.gitconfig`, `.gitconfig-f0t0n`, `.gitconfig-competera`, `.gitignore`, `.zsh_user_functions.zsh.f0t0n`
+`.bashrc`, `.zshrc`, `.ssh/config`, `.vimrc`, `.tmux.conf`, `.tmux`, `.emacs.d`, `.battery`, `.gitconfig`, `.gitconfig-f0t0n`, `.gitconfig-competera`, `.gitignore`, `.zsh_user_functions.zsh.f0t0n`
 
 ## Emacs Config (`dotfiles/.emacs.d/`)
 
@@ -55,5 +55,5 @@ Key bindings: `M-h/j/k/l` for pane navigation, `|` / `-` for splits, `r` to relo
 
 ## Notes
 
-- `.zshrc` is labeled "TEST config for use in container, not for the host machine" — the host zsh config lives elsewhere.
+- `.zshrc` is the portable host config (oh-my-zsh, pyenv, nvm, gvm, etc.) — all hardcoded paths use `$HOME`. Symlinked to `~/.zshrc`.
 - Vim config (`.vimrc`) uses vim-plug; Neovim uses lazy.nvim — they are separate setups.
