@@ -71,3 +71,9 @@
     (quit nil)))
 
 (setq electric-indent-mode nil)
+
+;; Soft-wrap prose buffers; never insert hard newlines
+(add-hook 'text-mode-hook
+          (lambda ()
+            (visual-line-mode 1)
+            (auto-fill-mode -1)))
