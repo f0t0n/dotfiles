@@ -18,7 +18,7 @@ For crontab-based cloud sync, add `* * * * * $HOME/dotfiles/crontab/sync_clouds.
 
 ### Symlinked files
 
-`.bashrc`, `.zshrc`, `.ssh/config`, `.vimrc`, `.tmux.conf`, `.tmux`, `.emacs.d`, `.battery`, `.gitconfig`, `.gitconfig-f0t0n`, `.gitconfig-competera`, `.gitignore`, `.zsh_user_functions.zsh.f0t0n`
+`.bashrc`, `.zshrc`, `.ssh/config`, `.vimrc`, `.tmux.conf`, `.tmux`, `.emacs.d`, `.gitconfig`, `.gitconfig-f0t0n`, `.gitconfig-competera`, `.gitignore`, `.zsh_user_functions.zsh.f0t0n`
 
 ## Emacs Config (`dotfiles/.emacs.d/`)
 

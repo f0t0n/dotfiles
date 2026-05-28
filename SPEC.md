@@ -70,8 +70,7 @@ dotfiles/                   ← repo root
 │   │   └── customizations/ ← shell-integration, navigation, ui, editing, misc,
 │   │                           common-lisp, setup-clojure, setup-js, setup-ts,
 │   │                           setup-markdown
-│   ├── .ssh/config         ← SSH host aliases
-│   └── .battery/           ← battery status scripts
+│   └── .ssh/config         ← SSH host aliases
 ├── nvimrc/                 ← Neovim config (symlinked to ~/.config/nvim)
 │   ├── setup               ← symlinks nvimrc/ → ~/.config/nvim
 │   ├── init.lua            ← bootstraps lazy.nvim → hotpot.nvim → Fennel modules
