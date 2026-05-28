@@ -31,7 +31,9 @@ shell-integration.el → navigation.el → ui.el → editing.el → misc.el
 
 Package manager: `package.el` with melpa-stable (priority 10), melpa (priority 5), and gnu ELPA. `markdown-preview-mode` and `websocket` are pinned to melpa.
 
-Key packages: `sly` (Common Lisp REPL, SBCL backend), `cider` + `clojure-mode` (Clojure), `vterm`, `paredit`, `magit`, `projectile`, `zenburn-theme`.
+Key packages: `sly` (Common Lisp REPL, SBCL backend), `cider` + `clojure-mode` (Clojure), `vterm`, `paredit`, `magit`, `projectile`, `zenburn-theme`, `markdown-preview-mode`.
+
+Markdown preview uses a custom zenburn theme: `dotfiles/.emacs.d/zenburn-preview.css` is read at startup, base64-encoded, and injected as a data URI into `markdown-preview-stylesheets` (bypasses the package's HTTP server which only serves files from the markdown file's directory).
 
 SLY REPL uses `C-<return>` to evaluate (bypasses paredit's RET). Clojure custom bindings: `C-c C-v` start HTTP server, `C-M-r` refresh, `C-c u` switch to user ns.
 
