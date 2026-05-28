@@ -16,7 +16,6 @@ Portable, reproducible developer environment for a single engineer (f0t0n) worki
 | Emacs + package.el | Clojure / Common Lisp IDE |
 | Vim + vim-plug | fallback/quick editor |
 | tmux | terminal multiplexer |
-| rclone | cloud storage sync |
 | GPG (/opt/homebrew/bin/gpg) | commit signing |
 | pyenv / nvm / gvm | language version managers |
 | pandoc | markdown rendering backend |
@@ -34,12 +33,6 @@ cd ~/dotfiles/nvimrc && ./setup
 # Vim plugin install (inside vim)
 :PlugInstall
 
-# Crontab cloud sync — add via: crontab -e
-* * * * * $HOME/dotfiles/crontab/sync_clouds.sh
-
-# rclone sync (called by crontab)
-rclone sync dropbox:password google_drive_personal:Dropbox/password
-rclone sync dropbox:password box:Dropbox/password
 ```
 
 ## Project Structure
@@ -82,9 +75,6 @@ dotfiles/                   ← repo root
 │       └── lazy/            ← per-plugin Fennel specs
 │           ├── init.fnl     ← plugin list
 │           ├── lsp.fnl, treesitter.fnl, telescope.fnl, ...
-└── crontab/
-    ├── sync_clouds.sh      ← rclone: Dropbox → GDrive + Box
-    └── README.md
 ```
 
 ## Code Style
@@ -123,8 +113,6 @@ No automated test suite — configs are tested by use. Manual verification:
 - Changing git identity config (`gitconfig-f0t0n`, `gitconfig-competera`)
 - Modifying SSH config
 - Adding new Emacs packages to `my-packages`
-- Changing crontab sync targets or frequency
-
 **Never:**
 - Commit secrets, API keys, or private SSH keys
 - Hardcode `/Users/f0t0n` — use `$HOME` or `~` for portability
@@ -141,7 +129,6 @@ No automated test suite — configs are tested by use. Manual verification:
 5. tmux loads with vim-nav bindings and battery status in status bar
 6. Neovim loads plugins via lazy.nvim; Fennel configs compile via hotpot
 7. Emacs starts with Clojure/Common Lisp support (CIDER + SLY)
-8. `sync_clouds.sh` runs via crontab every minute without errors
 
 ## Open Questions
 

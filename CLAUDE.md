@@ -8,13 +8,10 @@ Run `~/dotfiles/setup` once after cloning to `~`. It backs up existing files to 
 
 For Neovim specifically, run `nvimrc/setup` — it symlinks `nvimrc/` to `~/.config/nvim`.
 
-For crontab-based cloud sync, add `* * * * * $HOME/dotfiles/crontab/sync_clouds.sh` via `crontab -e`.
-
 ## Repository Structure
 
 - `dotfiles/` — files that get symlinked to `~`. These are the "live" configs.
 - `nvimrc/` — Neovim config; symlinked to `~/.config/nvim` via `nvimrc/setup`.
-- `crontab/` — shell script for cloud sync.
 
 ### Symlinked files
 
