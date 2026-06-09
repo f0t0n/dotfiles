@@ -56,4 +56,9 @@ ev
 # Bash
 .ash_history
 .python_history
+
+# Emacs
+.markdown-preview.html
 ###############################################################################
+
+**/.claude/settings.local.json
