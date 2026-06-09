@@ -4,7 +4,7 @@
 
 Portable, reproducible developer environment for a single engineer (f0t0n) working across personal and Competera work contexts on macOS. The repo holds all shell, editor, multiplexer, and git configs as the canonical source of truth, deployed to `~` via symlinks.
 
-**Success looks like:** cloning to `~/dotfiles` and running `~/dotfiles/setup` produces a fully functional environment with correct editor configs, git identities, shell tooling, and cloud sync — with no manual file copying.
+**Success looks like:** cloning to `~/dotfiles` and running `~/dotfiles/setup` produces a fully functional environment with correct editor configs, git identities, and shell tooling — with no manual file copying.
 
 ## Tech Stack
 
@@ -44,7 +44,7 @@ dotfiles/                   ← repo root
 ├── SPEC.md                 ← this file
 ├── README.md               ← human-facing overview
 ├── dotfiles/               ← files symlinked to ~
-│   ├── .zshrc              ← oh-my-zsh shell (pyenv, nvm, gvm, kubectl, AWS ECR)
+│   ├── .zshrc              ← oh-my-zsh shell (pyenv, nvm, gvm, sdkman, bun, gcloud)
 │   ├── .zsh_user_functions.zsh.f0t0n  ← custom zsh functions
 │   ├── .bashrc             ← bash fallback config
 │   ├── .vimrc              ← Vim config (vim-plug)
@@ -55,8 +55,8 @@ dotfiles/                   ← repo root
 │   ├── .tmux.conf          ← tmux: vim-nav, status bar, plugin load
 │   ├── .tmux/              ← tmux extras (plugins, session layouts)
 │   │   ├── plugins.tmux    ← TPM plugin declarations (sourced last by .tmux.conf)
-│   │   ├── dev             ← dev session layout
-│   │   └── user            ← user session layout
+│   │   ├── dev             ← Dev session creator (layout via session-created hook)
+│   │   └── layout-dev      ← 4-pane split layout, auto-applied to new sessions
 │   ├── .emacs.d/           ← Emacs config
 │   │   ├── init.el         ← entry point: packages + loads customizations/
 │   │   ├── zenburn-preview.css ← zenburn theme for markdown-preview-mode browser output
@@ -74,7 +74,8 @@ dotfiles/                   ← repo root
 │       ├── set.fnl          ← vim options
 │       └── lazy/            ← per-plugin Fennel specs
 │           ├── init.fnl     ← plugin list
-│           ├── lsp.fnl, treesitter.fnl, telescope.fnl, ...
+│           ├── lsp.fnl, treesitter.fnl, telescope.fnl, colors.fnl,
+│           ├── filetree.fnl, markdown.fnl, statusline.fnl, ...
 ```
 
 ## Code Style
@@ -126,7 +127,7 @@ No automated test suite — configs are tested by use. Manual verification:
 2. `~/dotfiles/nvimrc/setup` symlinks nvimrc to `~/.config/nvim`
 3. Correct git identity used per directory (`~/` → f0t0n, `~/code/competera/` → Competera)
 4. `~/.zshrc` sources cleanly; pyenv, nvm, gvm, kubectl all available
-5. tmux loads with vim-nav bindings and battery status in status bar
+5. tmux loads with vim-nav bindings and status bar
 6. Neovim loads plugins via lazy.nvim; Fennel configs compile via hotpot
 7. Emacs starts with Clojure/Common Lisp support (CIDER + SLY)
 

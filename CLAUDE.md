@@ -48,9 +48,11 @@ Conditional identity includes: `~/.gitconfig-f0t0n` for `~/`, `~/.gitconfig-comp
 
 ## Tmux Config
 
-Plugin load order matters: plugins are initialized via `source ~/.tmux/plugins.tmux` (must stay last in `.tmux.conf`).
+Plugin load order matters: plugins are initialized via `source ~/.tmux/plugins.tmux` (must stay last in `.tmux.conf`). Plugins: TPM, tmux-resurrect, tmux-continuum, tmux-battery.
 
-Key bindings: `M-h/j/k/l` for pane navigation, `|` / `-` for splits, `r` to reload config, `D` / `U` to source `~/.tmux/dev` / `~/.tmux/user` session layouts.
+Key bindings: `M-h/j/k/l` for pane navigation, `|` / `-` for splits, `r` to reload config, `D` to source `~/.tmux/dev` (creates Dev session).
+
+Session layout automation: `set-hook -g session-created` in `.tmux.conf` auto-sources `~/.tmux/layout-dev` for every new session. The `layout-dev` file defines a 4-pane split layout. `~/.tmux/dev` just creates a named session — the hook handles the layout.
 
 ## Notes
 
