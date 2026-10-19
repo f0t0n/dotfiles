@@ -73,3 +73,7 @@ export NVM_DIR="$HOME/.nvm"
 source <(kubectl completion bash)
 
 alias claude-mem='/Users/f0t0n/.bun/bin/bun "/Users/f0t0n/.claude-competera/plugins/cache/thedotmack/claude-mem/12.1.3/scripts/worker-service.cjs"'
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/f0t0n/.local/bin:$PATH"

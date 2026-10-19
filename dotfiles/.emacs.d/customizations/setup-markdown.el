@@ -1,7 +1,7 @@
 ;; Markdown
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
-(setq markdown-command "pandoc")
+(setq markdown-command "pandoc -f gfm -t html")
 (setq markdown-preview-auto-open 'http)
 (with-eval-after-load 'markdown-preview-mode
   (setq markdown-preview-stylesheets

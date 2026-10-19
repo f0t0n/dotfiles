@@ -149,3 +149,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 alias claude-mem="$HOME/.bun/bin/bun $HOME/.claude-competera/plugins/cache/thedotmack/claude-mem/12.1.3/scripts/worker-service.cjs"
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/f0t0n/.local/bin:$PATH"
