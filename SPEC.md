@@ -18,8 +18,8 @@ Portable, reproducible developer environment for a single engineer (f0t0n) worki
 | tmux | terminal multiplexer |
 | GPG (/opt/homebrew/bin/gpg) | commit signing |
 | pyenv / nvm / gvm | language version managers |
-| pandoc | markdown rendering backend |
-| markdown-preview-mode | live browser preview for markdown |
+| pandoc | markdown rendering backend (`pandoc -f gfm -t html`) |
+| markdown-preview-mode + websocket | multi-tab live browser preview with per-buffer UUID routing |
 
 ## Commands
 
@@ -40,7 +40,7 @@ cd ~/dotfiles/nvimrc && ./setup
 ```
 dotfiles/                   ← repo root
 ├── setup                   ← main install script (symlinks dotfiles/, installs vim-plug)
-├── CLAUDE.md               ← AI assistant guidance
+├── AGENTS.md               ← AI assistant guidance
 ├── SPEC.md                 ← this file
 ├── README.md               ← human-facing overview
 ├── dotfiles/               ← files symlinked to ~
@@ -86,7 +86,13 @@ dotfiles/                   ← repo root
 
 **Emacs Lisp:** One file per concern in `customizations/`. `init.el` loads them sequentially. Custom-set-variables isolated to `custom.el`.
 
-**Markdown preview theme:** `zenburn-preview.css` in `.emacs.d/` is the source of truth. `setup-markdown.el` reads it at startup, base64-encodes it, and sets `markdown-preview-stylesheets` to a data URI — avoids the package HTTP server's restriction of only serving files from the markdown file's directory. Edit `zenburn-preview.css` directly; changes take effect on next Emacs restart.
+**Markdown preview:** Configured in `setup-markdown.el`. Uses `pandoc -f gfm -t html` for GitHub-Flavored Markdown rendering. Overrides upstream `markdown-preview-mode` to support concurrent independent browser tabs per markdown buffer:
+- Renders HTML templates dynamically in memory per buffer UUID (`?uuid=...`), eliminating disk collisions on `.markdown-preview.html`.
+- Resolves relative assets dynamically against the requesting buffer's directory via HTTP `Referer`.
+- Routes WebSocket updates directly to the client tab matching the buffer's preview UUID (`MDPM-Register-UUID:` registration), avoiding loopback broadcast collisions.
+- Manages idle timers and save hooks per buffer.
+- Serves previews on HTTP port 7379 and WebSocket port 9000 with live hot-patching on reload.
+- Custom Zenburn styling: `zenburn-preview.css` in `.emacs.d/` is read at startup, base64-encoded, and injected as a data URI into `markdown-preview-stylesheets` to bypass server directory serving restrictions. Edit `zenburn-preview.css` directly; changes take effect on next Emacs restart.
 
 **Git config:** Conditional identity via `[includeIf "gitdir:..."]`. GPG signing always on. Work configs (`~/code/competera/`) override personal defaults.
 
@@ -97,6 +103,7 @@ No automated test suite — configs are tested by use. Manual verification:
 - After `setup`: confirm symlinks exist (`ls -la ~/ | grep dotfiles`)
 - After Neovim changes: `:checkhealth` + `:Lazy` status
 - After Emacs changes: start Emacs, check for errors in `*Messages*`
+- After markdown preview changes: open multiple markdown files in Emacs, run `M-x markdown-preview-mode` in each, and verify independent live browser tabs update without collisions
 - After tmux changes: `tmux source ~/.tmux.conf` and verify no errors
 - After `.zshrc` changes: `source ~/.zshrc` and confirm env vars load
 
@@ -130,6 +137,7 @@ No automated test suite — configs are tested by use. Manual verification:
 5. tmux loads with vim-nav bindings and status bar
 6. Neovim loads plugins via lazy.nvim; Fennel configs compile via hotpot
 7. Emacs starts with Clojure/Common Lisp support (CIDER + SLY)
+8. Emacs markdown-preview-mode renders GitHub-Flavored Markdown and supports multiple independent browser tabs simultaneously without collisions
 
 ## Open Questions
 
